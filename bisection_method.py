@@ -22,15 +22,15 @@ def bisect(a, b):
             yc = f(c)
             if yc == 0:
                 # then a = c and b = c
-                print("Iteration {0}:, a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
+                print("Iteration {0}: a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
                 print("ROOT: ", c)
                 break
             elif(ya * yc) < 0:
                 b = c
-                print("Iteration {0}:, a = {1}, b = {2}, c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
+                print("Iteration {0}: a = {1}, b = {2}, c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
             else:
                 a = c
-                print("Iteration {0}:, a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
+                print("Iteration {0}: a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
             
             c = float((a+b)/2)
             iterations += 1
