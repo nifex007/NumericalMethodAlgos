@@ -20,17 +20,15 @@ def bisect(a, b):
     else:
         while (True):
             yc = f(c)
+            print("Iteration {0}: a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
             if yc == 0:
-                # then a = c and b = c
-                print("Iteration {0}: a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
+                # then a = c and b = c                
                 print("ROOT: ", c)
                 break
             elif(ya * yc) < 0:
-                b = c
-                print("Iteration {0}: a = {1}, b = {2}, c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
+                b = c                
             else:
-                a = c
-                print("Iteration {0}: a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
+                a = c            
             
             c = float((a+b)/2)
             iterations += 1
