@@ -1,20 +1,17 @@
-import math
-
 ''' 
     a, b are left and right end points
     
 '''
 
 def f(x):
-    return math.exp(x)-2-x
+    return (x**3)-x-2
 
 # iterations = 1
 # max_iterations = 100
 
 
 def bisect(a, b):
-    iterations = 1
-    max_iterations = 10
+    iterations = 1    
     c = float((a+b)/2)
     ya = f(a)
     yb = f(b)
@@ -25,15 +22,15 @@ def bisect(a, b):
             yc = f(c)
             if yc == 0:
                 # then a = c and b = c
-                print("Iteration ", iterations)
+                print("Iteration {0}:, a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
                 print("ROOT: ", c)
                 break
             elif(ya * yc) < 0:
-                print("Iteration ", iterations)
                 b = c
+                print("Iteration {0}:, a = {1}, b = {2}, c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
             else:
-                print("Iteration ", iterations)
                 a = c
+                print("Iteration {0}:, a = {1}, b = {2} c = {3}, f(c) = {4} ".format(iterations, a, b, c, yc))
             
             c = float((a+b)/2)
             iterations += 1
@@ -41,7 +38,7 @@ def bisect(a, b):
     return c
 
 
-print(bisect(0.5, 2.5))
+print(bisect(1, 2))
 
     
         
