@@ -13,11 +13,13 @@ def p(x):
     p = numpy.poly1d(x)
     return p
 
-
+'''
+Evaluating p(x)
+'''
 def eval_polynomial(x, X): 
     equation = p(x)
-    A = equation.c #list of coefficients
-    B = copy.copy(A) 
+    A = equation.c      #list of coefficients
+    B = copy.copy(A)    
     index = len(A)
     counter = len(A) - 1
     
@@ -27,15 +29,8 @@ def eval_polynomial(x, X):
     for N in range(1,index):
         B[counter] = A[N] + B[counter + 1] * X
         print('b({0}) = {1} +({2})*{3} = {4}'.format(counter, A[N], B[counter + 1], X, B[counter]))
-        counter = counter - 1
-        
-        
-    
-    # for i in 
+        counter = counter - 1   
 
 
     
-    
-
-#print(p([-0.02, 0.2, -0.4,1.28]))
 print(eval_polynomial([-0.02, 0.2, -0.4,1.28], 4))
