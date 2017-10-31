@@ -58,10 +58,9 @@ def eval_polynomial_derivative(x, X):
 
 '''
 Algorithm to evaluate I(x)
-upper       {Upper limit}
-lower       {Lower limit}
+
 '''
-def eval_polynomial_integral(x,X,upper,lower):
+def eval_polynomial_integral(x,X):
     equation = p(x)
     A = equation.c
     I = copy.copy(x) 
@@ -80,20 +79,24 @@ def eval_polynomial_integral(x,X,upper,lower):
     #   I(0):= C + I(1)*X
     I[0] = 0 + I[1] * X
     print("I(0) = 0 + {0} * {1} = {2}".format(I[1], X, I[0]))
-
+    print('\n')
     
+    return I[0];
 
 
-
-
+'''
+Definite Integral of p(x) taken over two points
+upper       {Upper limit}
+lower       {Lower limit}
+'''
+def eval_polynomial_integral_limits(x,upper, lower):    
+    print('I({0}) - I({1}) = {2}'.format(upper, lower, eval_polynomial_integral(x, upper) - eval_polynomial_integral(x,lower)))
     
-    
-
-
 
 
     
     
 #print(eval_polynomial([-0.02, 0.2, -0.4,1.28], 4))
 #print(eval_polynomial_derivative([-0.02, 0.2, -0.4,1.28], 4))
-print(eval_polynomial_integral([-0.02, 0.2, -0.4,1.28], 4, 4,1))
+#print(eval_polynomial_integral([-0.02, 0.2, -0.4,1.28], 4))
+(eval_polynomial_integral_limits([-0.02, 0.2, -0.4,1.28], 4, 1))
